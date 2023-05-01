@@ -1,41 +1,23 @@
-﻿using CyberApp.Models;
+﻿using System.Drawing;
+using Image = System.Drawing.Image;
+using CyberApp.Models;
+using Point = System.Drawing.Point;
+using Size = System.Drawing.Size;
+
 namespace CyberApp;
 public partial class MainPage : ContentPage
 {
-    public List<User> Users { get; set; }
+    public List<Character> Characters { get; set; }
 
     public MainPage()
     {
         InitializeComponent();
-        Label header = new Label { Text = "Список пользователей", FontSize = 18 };
-        Users = new List<User>
+        Characters = new List<Character>
         {
-            new User {Name="Tom", Age=38 },
-            new User {Name = "Bob", Age= 42},
-            new User {Name="Sam", Age = 28},
-            new User {Name = "Alice", Age = 33}
+            new Character {FirstName= "Tom Hardy", NickName = "Redeye", Age=38, ClassIcon = "fixer.png"},
+            new Character {FirstName= "Harry Dubua", NickName = "Bullseye", Age=38, ClassIcon = "nomad.png"}
         };
         
-        ViewCharacters.ItemsSource = Users;
-        ViewCharacters.ItemTemplate = new DataTemplate(() =>
-        {
-            // привязка к свойству Name
-            Label nameLabel = new Label { FontSize = 16 };
-            nameLabel.SetBinding(Label.TextProperty, "Name");
- 
-            // привязка к свойству Age
-            Label ageLabel = new Label { FontSize = 14 };
-            ageLabel.SetBinding(Label.TextProperty, "Age");
- 
-            return new ViewCell
-            {
-                View = new StackLayout
-                {
-                    Padding = new Thickness(0, 5),
-                    Orientation = StackOrientation.Vertical,
-                    Children = { nameLabel, ageLabel }
-                }
-            };
-        });
+        ViewCharacters.ItemsSource = Characters;
     }
 }

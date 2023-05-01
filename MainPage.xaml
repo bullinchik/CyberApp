@@ -2,52 +2,100 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CyberApp.MainPage">
-
-    <StackLayout>
-        <ListView x:Name="ViewCharacters">
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        
+        <ListView x:Name="ViewCharacters"
+                  Grid.Row="0" 
+                  Grid.RowSpan="7"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="4">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <ViewCell.View>
-                            <StackLayout>
-                                <Label Text="{Binding Name}" FontSize="16" />
-                                <Label Text="{Binding Age}" FontSize="14" />
-                            </StackLayout>
-                        </ViewCell.View>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Border Grid.RowSpan="2">
+                                <Image
+                                    Source="{Binding ClassIcon}"
+                                    HeightRequest="100"
+                                    WidthRequest="100" />
+                            </Border>
+                            
+                            <Label Grid.Column="1"
+                                   Text="{Binding FirstName}"
+                                   FontAttributes="Bold" />
+                            <Label Grid.Row="1"
+                                   Grid.Column="1"
+                                   Text="{Binding NickName}"
+                                   FontAttributes="Italic"
+                                   VerticalOptions="End" />
+                        </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
         
-        <!-- <AbsoluteLayout HorizontalOptions="Fill" VerticalOptions="End"> -->
-        <!--     <HorizontalStackLayout HorizontalOptions="Center"> -->
-        <!--         <Button  -->
-        <!--             Text="New" -->
-        <!--             CornerRadius="25" -->
-        <!--             AbsoluteLayout.LayoutBounds="90, 100, 100, 50" -->
-        <!--             Margin="15"> -->
-        <!--         </Button> -->
-        <!--         <Button  -->
-        <!--             Text="New" -->
-        <!--             CornerRadius="25" -->
-        <!--             AbsoluteLayout.LayoutBounds="100,50" -->
-        <!--             Margin="15"> -->
-        <!--         </Button> -->
-        <!--     </HorizontalStackLayout> -->
-        <!-- </AbsoluteLayout> -->
-        <Image Source="settings.svg"/>
-
-        <!-- <Grid> -->
-        <!--     <Grid.RowDefinitions> -->
-        <!--         <RowDefinition /> -->
-        <!--         <RowDefinition /> -->
-        <!--     </Grid.RowDefinitions> -->
-        <!--     <Grid.ColumnDefinitions> -->
-        <!--         <ColumnDefinition /> -->
-        <!--         <ColumnDefinition /> -->
-        <!--     </Grid.ColumnDefinitions> -->
-        <!--      -->
-        <!--     <ImageButton Grid.Row="0" Grid.Column="0" Source="settings.svg" /> -->
-        <!-- </Grid> -->
-    </StackLayout>
+        <FlexLayout
+            Grid.Row="6"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            JustifyContent="SpaceAround"
+            Margin="0, 25, 0, 0">
+            
+            <Button
+                Margin="40, 0, 0, 0"
+                CornerRadius="40"
+                FontFamily="MateriallIcons"
+                Text="Импорт"/>
+            
+            <Button
+                Margin="0, 0, 40, 0"
+                CornerRadius="40"
+                ImageSource="add_light.svg"
+                Text="Создать"/>
+        </FlexLayout>
+        
+        <Border
+            BackgroundColor="#C93C29"
+            Grid.Row="7"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            Margin="0, 15, 0, 0">
+            <Grid
+                Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <ImageButton
+                    Grid.Column="1"
+                    Source="players_light.svg"/>
+            </Grid>
+        </Border>
+    </Grid>
 </ContentPage>
