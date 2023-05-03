@@ -22,10 +22,12 @@
         </Grid.ColumnDefinitions>
         
         <ListView x:Name="ViewCharacters"
+                  HasUnevenRows="true"
                   Grid.Row="0" 
                   Grid.RowSpan="7"
                   Grid.Column="0"
                   Grid.ColumnSpan="4">
+            
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -38,21 +40,28 @@
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
-                            <Border Grid.RowSpan="2">
-                                <Image
-                                    Source="{Binding ClassIcon}"
-                                    HeightRequest="100"
-                                    WidthRequest="100" />
+                            
+                            <Border Grid.RowSpan="2"
+                                    Margin="4">
+                                <Image 
+                                    HeightRequest="60"
+                                    WidthRequest="60"
+                                    Source="{Binding CharacterIcon}" x:FieldModifier="public">
+                                </Image>
                             </Border>
                             
-                            <Label Grid.Column="1"
+                            <Label Grid.Row="0"
+                                   Grid.Column="1"
                                    Text="{Binding FirstName}"
-                                   FontAttributes="Bold" />
+                                   FontSize="16"
+                                   FontAttributes="Bold"
+                                   VerticalTextAlignment="End"/>
                             <Label Grid.Row="1"
                                    Grid.Column="1"
                                    Text="{Binding NickName}"
-                                   FontAttributes="Italic"
-                                   VerticalOptions="End" />
+                                   FontSize="16"
+                                   TextColor="Grey"
+                                   VerticalOptions="Start" />
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
