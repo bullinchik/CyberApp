@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CyberApp.MainPage">
+             x:Class="CyberApp.View_Model.MainPage">
     <Grid>
         
         <Grid.RowDefinitions>
@@ -42,11 +42,18 @@
                             </Grid.ColumnDefinitions>
                             
                             <Border Grid.RowSpan="2"
-                                    Margin="4">
+                                    Margin="4"
+                                    Stroke="#C93C29"
+                                    StrokeThickness="4">
+                                <Border.StrokeShape>
+                                    <Path Data="M1 65.1221V1H65.4L71 6.07634V71H6.32L1 65.1221Z" Stroke="#C93C29"/>
+                                </Border.StrokeShape>
+                                
                                 <Image 
-                                    HeightRequest="60"
-                                    WidthRequest="60"
-                                    Source="{Binding CharacterIcon}" x:FieldModifier="public">
+                                    HeightRequest="70"
+                                    WidthRequest="70"
+                                    Source="{Binding CharacterIcon}"
+                                    Aspect="AspectFit">
                                 </Image>
                             </Border>
                             
