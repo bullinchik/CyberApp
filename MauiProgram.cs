@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace CyberApp;
+namespace CyberApp.View_Model;
 
 public static class MauiProgram
 {
