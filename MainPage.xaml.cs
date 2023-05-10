@@ -1,6 +1,7 @@
-﻿using CyberApp.Models;
+﻿using System.Numerics;
+using CyberApp.Models;
 
-namespace CyberApp.View_Model;
+namespace CyberApp;
 public partial class MainPage : ContentPage
 {
     public List<Character> Characters { get; set; }

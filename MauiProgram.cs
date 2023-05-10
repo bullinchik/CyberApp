@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace CyberApp.View_Model;
+namespace CyberApp;
 
 public static class MauiProgram
 {
@@ -13,6 +13,7 @@ public static class MauiProgram
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                fonts.AddFont("MaterialIcons.ttf", "MaterialIcons");
             });
 
 #if DEBUG

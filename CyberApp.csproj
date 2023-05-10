@@ -62,10 +62,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Update="View-Model\MainPage.xaml.cs">
-        <DependentUpon>MainPage.xaml</DependentUpon>
-        <SubType>Code</SubType>
-      </Compile>
       <Compile Update="AppShell.xaml.cs">
         <DependentUpon>AppShell.xaml</DependentUpon>
         <SubType>Code</SubType>
@@ -74,18 +70,24 @@
         <DependentUpon>App.xaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
+      <Compile Update="MainPage.xaml.cs">
+        <DependentUpon>MainPage.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
     </ItemGroup>
 
     <ItemGroup>
-      <MauiXaml Update="View\MainPage.xaml">
-        <SubType>Designer</SubType>
-      </MauiXaml>
       <MauiXaml Update="App.xaml">
         <SubType>Designer</SubType>
       </MauiXaml>
       <MauiXaml Update="AppShell.xaml">
         <SubType>Designer</SubType>
       </MauiXaml>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="View" />
+      <Folder Include="View-Model" />
     </ItemGroup>
 
 </Project>

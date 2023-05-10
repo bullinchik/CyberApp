@@ -1,5 +1,4 @@
-﻿using CyberApp.View_Model;
-using Foundation;
+﻿using Foundation;
 
 namespace CyberApp;
 

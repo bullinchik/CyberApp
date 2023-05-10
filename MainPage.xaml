@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CyberApp.View_Model.MainPage">
+             xmlns:icons="clr-namespace:CyberApp.Models"
+             x:Class="CyberApp.MainPage">
     <Grid>
-        
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition />
@@ -82,17 +82,55 @@
             JustifyContent="SpaceAround"
             Margin="0, 25, 0, 0">
             
-            <Button
-                Margin="40, 0, 0, 0"
-                CornerRadius="40"
-                FontFamily="MateriallIcons"
-                Text="Импорт"/>
-            
-            <Button
-                Margin="0, 0, 40, 0"
-                CornerRadius="40"
-                ImageSource="add_light.svg"
-                Text="Создать"/>
+            <Border
+                BackgroundColor="#C93C29"
+                Margin="40 ,0 ,0 ,0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="40" />
+                </Border.StrokeShape>
+                <HorizontalStackLayout
+                    Padding="10,0,15,0"
+                    Spacing="5">
+                    <Label 
+                        FontFamily="MaterialIcons" 
+                        Text="{x:Static icons:IconFont.Download_file}"
+                        FontSize="30"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        TextColor="White">
+                    </Label>
+                    <Label Text="Импорт"
+                           TextColor="White"
+                           FontSize="14"
+                           VerticalTextAlignment="Center"
+                           FontAttributes="Bold"/>
+                </HorizontalStackLayout>
+            </Border>
+
+            <Border
+                BackgroundColor="#C93C29"
+                Margin="0 ,0 ,40 ,0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="40" />
+                </Border.StrokeShape>
+                <HorizontalStackLayout
+                    Padding="10,0,15,0"
+                    Spacing="5">
+                    <Label 
+                        FontFamily="MaterialIcons" 
+                        Text="{x:Static icons:IconFont.Add_circle_sharp}"
+                        FontSize="30"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        TextColor="White">
+                    </Label>
+                    <Label Text="Создать"
+                           TextColor="White"
+                           FontSize="14"
+                           VerticalTextAlignment="Center"
+                           FontAttributes="Bold"/>
+                </HorizontalStackLayout>
+            </Border>
         </FlexLayout>
         
         <Border
@@ -101,16 +139,21 @@
             Grid.Column="0"
             Grid.ColumnSpan="4"
             Margin="0, 15, 0, 0">
-            <Grid
-                Margin="10">
+            <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                     <ColumnDefinition />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <ImageButton
-                    Grid.Column="1"
-                    Source="players_light.svg"/>
+                <ImageButton Grid.Column="1">
+                    <Image.Source>
+                        <FontImageSource
+                            FontFamily="MaterialIcons"
+                            Glyph="{x:Static icons:IconFont.Person_sharp}"
+                            Size="30" />
+                    </Image.Source>
+                </ImageButton>
+                
             </Grid>
         </Border>
     </Grid>
