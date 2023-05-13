@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:icons="clr-namespace:CyberApp.Models"
              x:Class="CyberApp.MainPage">
-    <Grid>
+
+        <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition />
@@ -81,7 +82,6 @@
             Grid.ColumnSpan="4"
             JustifyContent="SpaceAround"
             Margin="0, 25, 0, 0">
-            
             <Border
                 BackgroundColor="#C93C29"
                 Margin="40 ,0 ,0 ,0">
@@ -105,6 +105,9 @@
                            VerticalTextAlignment="Center"
                            FontAttributes="Bold"/>
                 </HorizontalStackLayout>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnImportCharacterTapped"/>
+                </Border.GestureRecognizers>
             </Border>
 
             <Border
@@ -145,7 +148,9 @@
                     <ColumnDefinition />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <ImageButton Grid.Column="1">
+                <ImageButton Grid.Column="1"
+                             WidthRequest="50"
+                             HeightRequest="50">
                     <Image.Source>
                         <FontImageSource
                             FontFamily="MaterialIcons"

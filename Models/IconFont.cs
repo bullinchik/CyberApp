@@ -49,12 +49,12 @@ static class IconFont
 	public const string Bug_report = "\ue868";
 	public const string Class = "\ue86e";
 	public const string Dashboard = "\ue871";
-	public const string Delete = "\ue872";
+	public const string Upload_to_cloud = "\ue872";
 	public const string Https = "\ue88d";
 	public const string Lock = "\ue897";
 	public const string Picture_in_picture = "\ue8aa";
-	public const string Settings = "\ue8b8";
-	public const string Settings_applications = "\ue8b9";
+	public const string Delete = "\ue8b8";
+	public const string Delete_selected = "\ue8b9";
 	public const string Tab = "\ue8d8";
 	public const string Visibility_off = "\ue8f5";
 	public const string Download_file = "\ue900";

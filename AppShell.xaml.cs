@@ -6,4 +6,16 @@ public partial class AppShell : Shell
     {
         InitializeComponent();
     }
+
+    protected override void OnNavigated(ShellNavigatedEventArgs args)
+    {
+        base.OnNavigated(args);
+        title.Text = Shell.Current.CurrentItem.Title;
+    }
+
+
+    private void OnDeleteCharactersClick(object sender, EventArgs e)
+    {
+        Console.WriteLine("no delete ... ");
+    }
 }
