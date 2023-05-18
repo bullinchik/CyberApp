@@ -2,9 +2,31 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:icons="clr-namespace:CyberApp.Models"
-             x:Class="CyberApp.MainPage">
-
-        <Grid>
+             x:Class="CyberApp.View.MainPage">
+    <NavigationPage.TitleView>
+            <Grid ColumnDefinitions="9* , 1*"
+                  Margin="0, 0, 8, 0"
+                  x:Name="titleViewGrid">
+                <Label Text="Персонажи" 
+                       Grid.Column="0" 
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="White"
+                       HorizontalOptions="Start"
+                       VerticalTextAlignment="Center"/>
+            
+                <ImageButton Grid.Column="1" HorizontalOptions="Center">
+                    <Image.Source>
+                        <FontImageSource
+                            FontFamily="MaterialIcons"
+                            Glyph="{x:Static icons:IconFont.Delete_selected}"
+                            Size="30" />
+                    </Image.Source>
+                </ImageButton>
+            </Grid>
+    </NavigationPage.TitleView>
+        
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition />
@@ -106,7 +128,7 @@
                            FontAttributes="Bold"/>
                 </HorizontalStackLayout>
                 <Border.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnImportCharacterTapped"/>
+                    <TapGestureRecognizer Command="{Binding ImportCharacter}"/>
                 </Border.GestureRecognizers>
             </Border>
 
@@ -133,6 +155,9 @@
                            VerticalTextAlignment="Center"
                            FontAttributes="Bold"/>
                 </HorizontalStackLayout>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding CreateCharacter}"/>
+                </Border.GestureRecognizers>
             </Border>
         </FlexLayout>
         

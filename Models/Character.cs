@@ -5,6 +5,8 @@ namespace CyberApp.Models;
 public class Character
 {
     public string FirstName { get; set; } = "";
+
+    public string SecondName { get; set; } = "";
     public string NickName { get; set; } = "";
 
     public string CharacterIcon { get; set; }

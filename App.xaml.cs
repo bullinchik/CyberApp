@@ -1,4 +1,7 @@
-﻿namespace CyberApp;
+﻿using CyberApp.View;
+using CyberApp.View_Model;
+
+namespace CyberApp;
 
 public partial class App : Application
 {
@@ -7,5 +10,7 @@ public partial class App : Application
         InitializeComponent();
 
         MainPage = new AppShell();
+        MainPage = new NavigationPage(new MainPage());
+        BindingContext = new MainViewModel();
     }
 }
