@@ -32,14 +32,14 @@ public class MainViewModel : INotifyPropertyChanged
                     { DevicePlatform.WinUI, new[] { ".xml" } }, // file extension
                     { DevicePlatform.macOS, new[] { "xml" } }, // UTType values
                 });
-
+        
             PickOptions options = new()
             {
                 PickerTitle = "Please select a comic file",
                 FileTypes = customFileType,
             };
-
-            Character files =  PickCharacters(options);
+        
+            //Character files =  PickCharacters(options);
         });
         CreateCharacter = new Command(() =>
         {
@@ -61,7 +61,6 @@ public class MainViewModel : INotifyPropertyChanged
                     return character;
                 }
             }
-
         }
         catch (XmlException ex)
         {
