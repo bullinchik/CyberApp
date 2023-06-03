@@ -2,7 +2,7 @@
 
 namespace CyberApp.Models.DatabaseModels;
 
-public class Region
+public class Regions
 {
     [Key]
     public int RegionId { get; set; }
