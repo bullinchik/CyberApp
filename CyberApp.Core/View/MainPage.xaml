@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:icons="clr-namespace:CyberApp.Data.Models;assembly=CyberApp.Data"
+             xmlns:constans="clr-namespace:CyberApp.Data.Models.Constants;assembly=CyberApp.Data"
+             x:Class="CyberApp.View.MainPage">
+    <NavigationPage.TitleView>
+            <Grid ColumnDefinitions="9* , 1*"
+                  Margin="0, 0, 8, 0"
+                  x:Name="titleViewGrid">
+                <Label Text="Персонажи" 
+                       Grid.Column="0" 
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="White"
+                       HorizontalOptions="Start"
+                       VerticalTextAlignment="Center"/>
+            
+                <ImageButton Grid.Column="1" HorizontalOptions="Center">
+                    <Image.Source>
+                        <FontImageSource
+                            FontFamily="MaterialIcons"
+                            Glyph="{x:Static constans:IconFont.Delete_selected}"
+                            Size="30" />
+                    </Image.Source>
+                </ImageButton>
+            </Grid>
+    </NavigationPage.TitleView>
+        
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        
+        <ListView x:Name="ViewCharacters"
+                  HasUnevenRows="true"
+                  Grid.Row="0" 
+                  Grid.RowSpan="7"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="4">
+            
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            
+                            <Border Grid.RowSpan="2"
+                                    Margin="4"
+                                    Stroke="#C93C29"
+                                    StrokeThickness="4">
+                                <Border.StrokeShape>
+                                    <Path Data="M1 65.1221V1H65.4L71 6.07634V71H6.32L1 65.1221Z" Stroke="#C93C29"/>
+                                </Border.StrokeShape>
+                                
+                                <Image 
+                                    HeightRequest="70"
+                                    WidthRequest="70"
+                                    Source="{Binding CharacterIcon}"
+                                    Aspect="AspectFit">
+                                </Image>
+                            </Border>
+                            
+                            <Label Grid.Row="0"
+                                   Grid.Column="1"
+                                   Text="{Binding FirstName}"
+                                   FontSize="16"
+                                   FontAttributes="Bold"
+                                   VerticalTextAlignment="End"/>
+                            <Label Grid.Row="1"
+                                   Grid.Column="1"
+                                   Text="{Binding NickName}"
+                                   FontSize="16"
+                                   TextColor="Grey"
+                                   VerticalOptions="Start" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+        <FlexLayout
+            Grid.Row="6"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            JustifyContent="SpaceAround"
+            Margin="0, 25, 0, 0">
+            <Border
+                BackgroundColor="#C93C29"
+                Margin="40 ,0 ,0 ,0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="40" />
+                </Border.StrokeShape>
+                <HorizontalStackLayout
+                    Padding="10,0,15,0"
+                    Spacing="5">
+                    <Label 
+                        FontFamily="MaterialIcons" 
+                        Text="{x:Static constans:IconFont.Download_file}"
+                        FontSize="30"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        TextColor="White">
+                    </Label>
+                    <Label Text="Импорт"
+                           TextColor="White"
+                           FontSize="14"
+                           VerticalTextAlignment="Center"
+                           FontAttributes="Bold"/>
+                </HorizontalStackLayout>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ImportCharacter}"/>
+                </Border.GestureRecognizers>
+            </Border>
+
+            <Border
+                BackgroundColor="#C93C29"
+                Margin="0 ,0 ,40 ,0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="40" />
+                </Border.StrokeShape>
+                <HorizontalStackLayout
+                    Padding="10,0,15,0"
+                    Spacing="5">
+                    <Label 
+                        FontFamily="MaterialIcons" 
+                        Text="{x:Static constans:IconFont.Add_circle_sharp}"
+                        FontSize="30"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        TextColor="White">
+                    </Label>
+                    <Label Text="Создать"
+                           TextColor="White"
+                           FontSize="14"
+                           VerticalTextAlignment="Center"
+                           FontAttributes="Bold"/>
+                </HorizontalStackLayout>
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding CreateCharacter}"/>
+                </Border.GestureRecognizers>
+            </Border>
+        </FlexLayout>
+        
+        <Border
+            BackgroundColor="#C93C29"
+            Grid.Row="7"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            Margin="0, 15, 0, 0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <ImageButton Grid.Column="1"
+                             WidthRequest="50"
+                             HeightRequest="50">
+                    <Image.Source>
+                        <FontImageSource
+                            FontFamily="MaterialIcons"
+                            Glyph="{x:Static constans:IconFont.Person_sharp}"
+                            Size="30" />
+                    </Image.Source>
+                </ImageButton>
+                
+            </Grid>
+        </Border>
+    </Grid>
+</ContentPage>
