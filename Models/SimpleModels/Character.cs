@@ -1,6 +1,4 @@
-﻿using CyberApp.Models.DatabaseModels;
-
-namespace CyberApp.Models;
+﻿using CyberApp.Models;
 
 public class Character
 {
@@ -13,4 +11,12 @@ public class Character
 
     public CharacterClass CharacterClass { get; set; }
     public int Age { get; set; }
+
+    public string PersonalInformation { get; set; } //сюда парсить все вопросы и ответы через \n в одну большую строку 
+
+    public IEnumerable<Item> Items { get; set; }
+
+    public IEnumerable<Skill> Skills { get; set; }
+
+    public IEnumerable<STAT> Stats { get; set; }
 }

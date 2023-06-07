@@ -4,7 +4,6 @@ using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using System.Xml;
 using System.Xml.Serialization;
-using Android.App;
 using CyberApp.Models;
 using CyberApp.View;
 using Application = Microsoft.Maui.Controls.Application;
@@ -52,7 +51,7 @@ public class MainViewModel : INotifyPropertyChanged
         try
         {
             var result = FilePicker.Default.PickAsync(options).Result;
-            XmlSerializer xmlDeserializer = new XmlSerializer(typeof(Person));
+            XmlSerializer xmlDeserializer = new XmlSerializer(typeof(Character));
             if (result != null && result.FileName.EndsWith("xml", StringComparison.OrdinalIgnoreCase))
             {
                 using (FileStream fs = new FileStream(result.FullPath, FileMode.Open))
