@@ -8,30 +8,20 @@ namespace CyberApp.Data;
 
 public class DatabaseContext : DbContext
 {
-    public DbSet<Affections> AffectionYouAreNeverWithoutEnumerable { get; set; } = null!;
     public DbSet<CharacterClass> CharacterClasses { get; set; } = null!;
-    public DbSet<CharacterSkills> CharacterSkillsEnumerable { get; set; } = null!;
+    public DbSet<CharacterSkills> CharacterSkills { get; set; } = null!;
     public DbSet<CharacterPresetStats> CharacterStats { get; set; } = null!;
-    public DbSet<Childhood> Childhoods { get; set; } = null!;
-    public DbSet<ClothingStyle> ClothingStyles { get; set; } = null!;
     public DbSet<Cost> Costs { get; set; } = null!;
-    public DbSet<FamilyCrisis> FamilyCrisisEnumerable { get; set; } = null!;
-    public DbSet<FeelAboutMostPeople> FeelAboutMostPeopleEnumerable { get; set; } = null!;
-    public DbSet<Goals> GoalsEnumerable { get; set; } = null!;
-    public DbSet<HairStyle> HairStyles { get; set; } = null!;
-    public DbSet<Language> Languages { get; set; } = null!;
     public DbSet<MeleeWeapon> MeleeWeapons { get; set; } = null!;
     public DbSet<MeleeWeaponType> MeleeWeaponTypes { get; set; } = null!;
-    public DbSet<MostValue> MostValues { get; set; } = null!;
-    public DbSet<MostValuePerson> MostValuePersons { get; set; } = null!;
     public DbSet<RangedWeapon> RangedWeapons { get; set; } = null!;
     public DbSet<RangedWeaponType> RangedWeaponTypes { get; set; } = null!;
-    public DbSet<Regions> RegionsEnumerable { get; set; } = null!;
-    public DbSet<Skill> SkillEnumerable { get; set; } = null!;
-    public DbSet<Stat> StatEnumerable { get; set; } = null!;
-    public DbSet<StoryClassQuestionAnswers> StoryClassQuestionTextEnumerable { get; set; } = null!;
-    public DbSet<StoryQuestion> StoryQuestions { get; set; } = null!;
-    public DbSet<WhatAreYouLike> WhatAreYouLikeEnumerable { get; set; } = null!;
+    public DbSet<Skill> Skills { get; set; } = null!;
+    public DbSet<Stat> Stats { get; set; } = null!;
+    public DbSet<ClassQuestionAnswers> ClassQuestionAnswers { get; set; } = null!;
+    public DbSet<ClassQuestion> ClassQuestions { get; set; } = null!;
+    public DbSet<GeneralQuestion> GeneralQuestions { get; set; } = null!;
+    public DbSet<GeneralQuestionAnswer> GeneralQuestionAnswers { get; set; } = null!;
 
     public DatabaseContext()
     {
