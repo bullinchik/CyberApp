@@ -20,7 +20,7 @@
                     <Image.Source>
                         <FontImageSource
                             FontFamily="MaterialIcons"
-                            Glyph="{x:Static constans:IconFont.Delete_selected}"
+                            Glyph="{x:Static constans:IconFont.DELETE_SELECTED}"
                             Size="30" />
                     </Image.Source>
                 </ImageButton>
@@ -116,7 +116,7 @@
                     Spacing="5">
                     <Label 
                         FontFamily="MaterialIcons" 
-                        Text="{x:Static constans:IconFont.Download_file}"
+                        Text="{x:Static constans:IconFont.DOWNLOAD_FILE}"
                         FontSize="30"
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
@@ -144,7 +144,7 @@
                     Spacing="5">
                     <Label 
                         FontFamily="MaterialIcons" 
-                        Text="{x:Static constans:IconFont.Add_circle_sharp}"
+                        Text="{x:Static constans:IconFont.ADD_CIRCLE_SHARP}"
                         FontSize="30"
                         HorizontalOptions="Center"
                         VerticalOptions="Center"
@@ -180,7 +180,7 @@
                     <Image.Source>
                         <FontImageSource
                             FontFamily="MaterialIcons"
-                            Glyph="{x:Static constans:IconFont.Person_sharp}"
+                            Glyph="{x:Static constans:IconFont.PERSON_SHARP}"
                             Size="30" />
                     </Image.Source>
                 </ImageButton>

@@ -2,10 +2,9 @@
 
 namespace CyberApp.Data.Models.Entity;
 
-public class STAT
+public class Stat
 {
     [Key] 
-    public int STATId { get; set; }
-
-    public string STAT_Name { get; set; }
+    public int Id { get; set; }
+    public string Name { get; set; }
 }

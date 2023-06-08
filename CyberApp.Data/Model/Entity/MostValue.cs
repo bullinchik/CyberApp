@@ -4,6 +4,6 @@ namespace CyberApp.Data.Models.Entity;
 
 public class MostValue
 {
-    [Key] public int MostValueId { get; set; }
-    public string MostValueDescription { get; set; }
+    [Key] public int Id { get; set; }
+    public string Description { get; set; }
 }

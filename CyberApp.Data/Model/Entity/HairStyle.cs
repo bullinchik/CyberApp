@@ -4,6 +4,6 @@ namespace CyberApp.Data.Models.Entity;
 
 public class HairStyle
 {
-    [Key] public int HairStyleId { get; set; }
-    public string HairSyleDescription { get; set; }
+    [Key] public int Id { get; set; }
+    public string Description { get; set; }
 }

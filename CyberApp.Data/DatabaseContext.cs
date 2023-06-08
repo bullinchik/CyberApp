@@ -3,19 +3,20 @@ using CyberApp.Data.Models.SimpleModels;
 using Microsoft.EntityFrameworkCore;
 using CharacterClass = CyberApp.Data.Models.SimpleModels.CharacterClass;
 using Skill = CyberApp.Data.Models.SimpleModels.Skill;
+using Stat = CyberApp.Data.Models.SimpleModels.Stat;
 
 namespace CyberApp.Data;
 
 public class DatabaseContext : DbContext
 {
-    public DbSet<AffectionYouAreNeverWithout> AffectionYouAreNeverWithoutEnumerable { get; set; } = null!;
+    public DbSet<Affections> AffectionYouAreNeverWithoutEnumerable { get; set; } = null!;
     public DbSet<CharacterClass> CharacterClasses { get; set; } = null!;
     public DbSet<CharacterSkills> CharacterSkillsEnumerable { get; set; } = null!;
-    public DbSet<CharacterSTAT> CharacterStats { get; set; } = null!;
+    public DbSet<CharacterPresetStats> CharacterStats { get; set; } = null!;
     public DbSet<Childhood> Childhoods { get; set; } = null!;
     public DbSet<ClothingStyle> ClothingStyles { get; set; } = null!;
     public DbSet<Cost> Costs { get; set; } = null!;
-    public DbSet<FamilyCrysis> FamilyCrisisEnumerable { get; set; } = null!;
+    public DbSet<FamilyCrisis> FamilyCrisisEnumerable { get; set; } = null!;
     public DbSet<FeelAboutMostPeople> FeelAboutMostPeopleEnumerable { get; set; } = null!;
     public DbSet<Goals> GoalsEnumerable { get; set; } = null!;
     public DbSet<HairStyle> HairStyles { get; set; } = null!;
@@ -29,7 +30,7 @@ public class DatabaseContext : DbContext
     public DbSet<Regions> RegionsEnumerable { get; set; } = null!;
     public DbSet<Skill> SkillEnumerable { get; set; } = null!;
     public DbSet<Stat> StatEnumerable { get; set; } = null!;
-    public DbSet<StoryClassQuestionText> StoryClassQuestionTextEnumerable { get; set; } = null!;
+    public DbSet<StoryClassQuestionAnswers> StoryClassQuestionTextEnumerable { get; set; } = null!;
     public DbSet<StoryQuestion> StoryQuestions { get; set; } = null!;
     public DbSet<WhatAreYouLike> WhatAreYouLikeEnumerable { get; set; } = null!;
 

@@ -4,6 +4,6 @@ namespace  CyberApp.Data.Models.Entity;
 
 public class FeelAboutMostPeople
 {
-    [Key] public int FeelAboutMostPeopleId { get; set; }
-    public string FeelAboutMostPeopleDescription { get; set; }
+    [Key] public int Id { get; set; }
+    public string Description { get; set; }
 }
