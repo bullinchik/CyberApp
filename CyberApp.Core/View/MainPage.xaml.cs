@@ -1,4 +1,4 @@
-﻿using CyberApp.Data.Models.SimpleModels;
+﻿using CyberApp.Data.Model.Models;
 using CyberApp.Data.Models;
 using CyberApp.View_Model;
 

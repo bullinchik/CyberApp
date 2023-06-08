@@ -1,6 +1,6 @@
-﻿using CyberApp.Data.Models.Entity;
+﻿using CyberApp.Data.Model.Entity;
 
-namespace CyberApp.Data.Models.SimpleModels;
+namespace CyberApp.Data.Model.Models;
 
 public class Item
 {

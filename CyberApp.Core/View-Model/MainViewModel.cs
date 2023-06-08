@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using System.Xml;
 using System.Xml.Serialization;
-using CyberApp.Data.Models.SimpleModels;
+using CyberApp.Data.Model.Models;
 using CyberApp.Data.Models;
 using CyberApp.View;
 using Application = Microsoft.Maui.Controls.Application;

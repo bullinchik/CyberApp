@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace CyberApp.Data.Models.Entity;
+namespace CyberApp.Data.Model.Entity;
 
 public class Childhood
 {

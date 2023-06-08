@@ -1,4 +1,4 @@
-﻿namespace CyberApp.Data.Models.Constants;
+﻿namespace CyberApp.Data.Model.Constants;
 
 public static class IconFont
 {

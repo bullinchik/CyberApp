@@ -1,9 +1,8 @@
-﻿using CyberApp.Data.Models.Entity;
-using CyberApp.Data.Models.SimpleModels;
+﻿using CyberApp.Data.Model.Entity;
 using Microsoft.EntityFrameworkCore;
-using CharacterClass = CyberApp.Data.Models.SimpleModels.CharacterClass;
-using Skill = CyberApp.Data.Models.SimpleModels.Skill;
-using Stat = CyberApp.Data.Models.SimpleModels.Stat;
+using CharacterClass = CyberApp.Data.Model.Models.CharacterClass;
+using Skill = CyberApp.Data.Model.Models.Skill;
+using Stat = CyberApp.Data.Model.Models.Stat;
 
 namespace CyberApp.Data;
 
