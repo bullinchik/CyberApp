@@ -12,6 +12,6 @@ public static class DependencyInjectionConfiguration
 
     private static void AddServices(IServiceCollection services)
     {
-        services.AddSingleton<ICharacterService, CharacterService>();
+        services.AddSingleton<IQuestionsService, QuestionsService>();
     }
 }

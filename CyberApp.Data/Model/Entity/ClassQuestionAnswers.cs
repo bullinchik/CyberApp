@@ -2,8 +2,9 @@
 
 namespace CyberApp.Data.Model.Entity;
 
-public class MostValue
+public class ClassQuestionAnswers
 {
     [Key] public int Id { get; set; }
-    public string Description { get; set; }
+
+    public string Answer { get; set; } = null!;
 }

@@ -2,11 +2,16 @@
 
 namespace CyberApp.Data.Model.Entity;
 
-public class StoryQuestion
+public class ClassQuestion
 {
+    public ClassQuestion()
+    {
+        Answers = new List<ClassQuestionAnswers>();
+    }
+
     [Key] 
     public int Id { get; set; }
     public int ClassId { get; set; }
     public int StoryQuestionTextId { get; set; }
-    public List<StoryClassQuestionAnswers> Answers { get; set; }
+    public ICollection<ClassQuestionAnswers> Answers { get; set; }
 }
