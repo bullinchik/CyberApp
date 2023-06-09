@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyberApp", "CyberApp.Core/C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyberApp.Data", "CyberApp.Data\CyberApp.Data.csproj", "{4052A558-1787-4532-84AC-2999E16D7FFD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyberApp.Migrator", "CyberApp.Migrator\CyberApp.Migrator.csproj", "{A99DBB34-6578-4160-B013-8ED615434F4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,5 +24,9 @@ Global
 		{4052A558-1787-4532-84AC-2999E16D7FFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4052A558-1787-4532-84AC-2999E16D7FFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4052A558-1787-4532-84AC-2999E16D7FFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A99DBB34-6578-4160-B013-8ED615434F4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A99DBB34-6578-4160-B013-8ED615434F4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A99DBB34-6578-4160-B013-8ED615434F4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A99DBB34-6578-4160-B013-8ED615434F4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
