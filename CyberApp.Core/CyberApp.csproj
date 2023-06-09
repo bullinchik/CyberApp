@@ -99,7 +99,6 @@
 
     <ItemGroup>
       <None Remove="cyber.db" />
-      <Resource Include="cyber.db" />
       <None Remove="Models\Database\cyber.db" />
     </ItemGroup>
 
