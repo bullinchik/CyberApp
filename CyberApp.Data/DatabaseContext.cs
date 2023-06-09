@@ -7,22 +7,7 @@ using Stat = CyberApp.Data.Model.Models.Stat;
 namespace CyberApp.Data;
 
 public class DatabaseContext : DbContext
-{
-    public DbSet<CharacterClass> CharacterClasses { get; set; } = null!;
-    public DbSet<CharacterSkills> CharacterSkills { get; set; } = null!;
-    public DbSet<CharacterPresetStats> CharacterStats { get; set; } = null!;
-    public DbSet<Cost> Costs { get; set; } = null!;
-    public DbSet<MeleeWeapon> MeleeWeapons { get; set; } = null!;
-    public DbSet<MeleeWeaponType> MeleeWeaponTypes { get; set; } = null!;
-    public DbSet<RangedWeapon> RangedWeapons { get; set; } = null!;
-    public DbSet<RangedWeaponType> RangedWeaponTypes { get; set; } = null!;
-    public DbSet<Skill> Skills { get; set; } = null!;
-    public DbSet<Stat> Stats { get; set; } = null!;
-    public DbSet<ClassQuestionAnswers> ClassQuestionAnswers { get; set; } = null!;
-    public DbSet<ClassQuestion> ClassQuestions { get; set; } = null!;
-    public DbSet<GeneralQuestion> GeneralQuestions { get; set; } = null!;
-    public DbSet<GeneralQuestionAnswer> GeneralQuestionAnswers { get; set; } = null!;
-
+{   
     public DatabaseContext()
     {
         File = Path.Combine("../", "UsedByMigratorOnly1.db3");
@@ -61,4 +46,19 @@ public class DatabaseContext : DbContext
         Database.CloseConnection();
         Database.OpenConnection();
     }
+
+    public DbSet<CharacterClass> CharacterClasses { get; set; } = null!;
+    public DbSet<CharacterSkills> CharacterSkills { get; set; } = null!;
+    public DbSet<CharacterPresetStats> CharacterStats { get; set; } = null!;
+    public DbSet<Cost> Costs { get; set; } = null!;
+    // public DbSet<MeleeWeapon> MeleeWeapons { get; set; } = null!;
+    // public DbSet<MeleeWeaponType> MeleeWeaponTypes { get; set; } = null!;
+    // public DbSet<RangedWeapon> RangedWeapons { get; set; } = null!;
+    // public DbSet<RangedWeaponType> RangedWeaponTypes { get; set; } = null!;
+    public DbSet<Skill> Skills { get; set; } = null!;
+    public DbSet<Stat> Stats { get; set; } = null!;
+    public DbSet<ClassQuestionAnswers> ClassQuestionAnswers { get; set; } = null!;
+    public DbSet<ClassQuestion> ClassQuestions { get; set; } = null!;
+    public DbSet<GeneralQuestion> GeneralQuestions { get; set; } = null!;
+    public DbSet<GeneralQuestionAnswer> GeneralQuestionAnswers { get; set; } = null!;
 }

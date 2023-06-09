@@ -5,7 +5,7 @@ namespace CyberApp.Data.Model.Entity;
 public class MeleeWeapon
 {
     [Key] 
-    public int MeleeWeaponId;
+    public int Id;
     public int MeleeWeaponTypeId { get; set; }
     public virtual MeleeWeaponType MeleeWeaponType { get; set; }
     public int Damage { get; set; }
