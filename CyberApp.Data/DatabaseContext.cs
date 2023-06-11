@@ -57,7 +57,7 @@ public class DatabaseContext : DbContext
     // public DbSet<RangedWeaponType> RangedWeaponTypes { get; set; } = null!;
     public DbSet<Skill> Skills { get; set; } = null!;
     public DbSet<Stat> Stats { get; set; } = null!;
-    public DbSet<ClassQuestionAnswers> ClassQuestionAnswers { get; set; } = null!;
+    public DbSet<ClassQuestionAnswer> ClassQuestionAnswers { get; set; } = null!;
     public DbSet<ClassQuestion> ClassQuestions { get; set; } = null!;
     public DbSet<GeneralQuestion> GeneralQuestions { get; set; } = null!;
     public DbSet<GeneralQuestionAnswer> GeneralQuestionAnswers { get; set; } = null!;
