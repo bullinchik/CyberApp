@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CyberApp.View_Model"
+             x:Class="CyberApp.View.ClassSelection">
+    <NavigationPage.TitleView>
+        <Label Text="Выбор класса" 
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"/>
+    </NavigationPage.TitleView>
+    
+    <TabbedPage.ItemTemplate>
+        <DataTemplate>
+            <StackLayout>
+                <Image Source="{Binding ImageSource}">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SelectClass}"/> 
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+        </DataTemplate>
+    </TabbedPage.ItemTemplate>
+</TabbedPage>

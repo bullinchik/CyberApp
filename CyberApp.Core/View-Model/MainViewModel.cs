@@ -5,7 +5,6 @@ using System.Windows.Input;
 using System.Xml;
 using System.Xml.Serialization;
 using CyberApp.Data.Model.Models;
-using CyberApp.Data.Model;
 using CyberApp.View;
 using Application = Microsoft.Maui.Controls.Application;
 
@@ -39,7 +38,7 @@ public class MainViewModel : INotifyPropertyChanged
                 FileTypes = customFileType,
             };
         
-            //Character files =  PickCharacters(options);
+            // Character files =  PickCharacters(options);
         });
         CreateCharacter = new Command(() =>
         {
