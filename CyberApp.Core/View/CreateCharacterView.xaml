@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CyberApp.View.CreateCharacter">
+    <NavigationPage.TitleView>
+        <Label Text="Новый персонаж"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"/>
+    </NavigationPage.TitleView>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        
+        <Button Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Text="Преген" Clicked="Button_OnClicked"/>
+        <Button Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="2" Text="Частичная калькуляция" Clicked="Button_OnClicked"/>
+        <Button Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="3" Text="Полная калькуляция" Clicked="Button_OnClicked"/>
+    </Grid>
+</ContentPage>
