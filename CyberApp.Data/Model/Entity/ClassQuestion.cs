@@ -6,12 +6,12 @@ public class ClassQuestion
 {
     public ClassQuestion()
     {
-        Answers = new List<ClassQuestionAnswers>();
+        Answers = new List<ClassQuestionAnswer>();
     }
 
     [Key] 
     public int Id { get; set; }
     public int ClassId { get; set; }
-    public int StoryQuestionTextId { get; set; }
-    public ICollection<ClassQuestionAnswers> Answers { get; set; }
+    public string Text { get; set; } = null!;
+    public ICollection<ClassQuestionAnswer> Answers { get; set; }
 }

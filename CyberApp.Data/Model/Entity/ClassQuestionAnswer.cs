@@ -2,9 +2,9 @@
 
 namespace CyberApp.Data.Model.Entity;
 
-public class ClassQuestionAnswers
+public class ClassQuestionAnswer
 {
     [Key] public int Id { get; set; }
 
-    public string Answer { get; set; } = null!;
+    public string Text { get; set; } = null!;
 }

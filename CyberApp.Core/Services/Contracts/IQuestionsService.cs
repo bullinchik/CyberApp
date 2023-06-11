@@ -4,5 +4,5 @@ namespace CyberApp.Services.Contracts;
 
 public interface IQuestionsService
 {
-    QuestionsModel Get(int classId);
+    QuestionsCollectionModel Get(int classId);
 }

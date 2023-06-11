@@ -25,6 +25,7 @@ public static class MauiProgram
 
         builder.Services.AddDatabaseContext();
         builder.Services.AddDependencyInjection();
+        builder.Services.AddMapping();
 
         return builder.Build();
     }
