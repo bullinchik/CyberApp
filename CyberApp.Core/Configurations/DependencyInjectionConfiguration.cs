@@ -13,5 +13,6 @@ public static class DependencyInjectionConfiguration
     private static void AddServices(IServiceCollection services)
     {
         services.AddSingleton<IQuestionsService, QuestionsService>();
+        services.AddSingleton<IClassService, ClassService>();
     }
 }
