@@ -1,4 +1,6 @@
-﻿namespace CyberApp.Data.Model.Models;
+﻿using CyberApp.Data.Model.Entity;
+
+namespace CyberApp.Data.Model.Models;
 
 public class Character
 {
