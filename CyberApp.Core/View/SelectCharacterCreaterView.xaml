@@ -5,7 +5,7 @@
              x:Class="CyberApp.View.CreateCharacter">
     <NavigationPage.TitleView>
         <Label Text="Новый персонаж"
-               FontSize="14"
+               FontSize="18"
                TextColor="White"
                FontAttributes="Bold"
                HorizontalTextAlignment="Center"
