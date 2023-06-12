@@ -1,4 +1,5 @@
-﻿using CyberApp.Data.Model.Models;
+﻿using System.Reflection;
+using CyberApp.Data.Model.Models;
 using CyberApp.Data.Model;
 using CyberApp.View_Model;
 
@@ -10,6 +11,18 @@ public partial class MainPage : ContentPage
     public MainPage()
     {
         InitializeComponent();
+
+        var assembly = IntrospectionExtensions.GetTypeInfo(typeof(App)).Assembly;
+        using (Stream stream = assembly.GetManifestResourceStream("CyberApp.SQLite001.db3"))
+        {
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                stream.CopyTo(memoryStream);
+
+                File.WriteAllBytes(Path.Combine(FileSystem.AppDataDirectory, "SQLite001.db3"), memoryStream.ToArray());
+            }
+        }
+        
         Characters = new List<Character>
         {
             new Character {FirstName= "Tom Hardy", NickName = "Redeye", Age=38, CharacterIcon = "exec.png" } ,

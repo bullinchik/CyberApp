@@ -10,12 +10,13 @@ public class ClassSelectionViewModel
     private readonly IClassService _classService; 
     public ICommand SelectClass { get; set; }
     
-    public IEnumerable<CharacterClass> ClassCollection;
+    public List<CharacterClass> ClassCollection;
 
-    public ClassSelectionViewModel()
+    public ClassSelectionViewModel(IClassService classService)
     {
+        _classService = classService;
         ClassCollection = _classService.GetAll();
-
+        
         SelectClass = new Command(() =>
         {
             //to do

@@ -19,7 +19,7 @@ public class MainViewModel : INotifyPropertyChanged
     public ObservableCollection<Character> Character { get; } 
     public event PropertyChangedEventHandler PropertyChanged;
 
-    public MainViewModel()
+    public MainViewModel(IServiceProvider serviceProvider)
     {
         ImportCharacter = new Command(() =>
         {
@@ -42,7 +42,7 @@ public class MainViewModel : INotifyPropertyChanged
         });
         CreateCharacter = new Command(() =>
         {
-            Application.Current.MainPage.Navigation.PushAsync(new CreateCharacter());
+            Application.Current.MainPage.Navigation.PushAsync(new CreateCharacter(serviceProvider));
         });
     }
 

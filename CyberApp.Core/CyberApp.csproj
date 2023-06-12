@@ -107,4 +107,11 @@
       <ProjectReference Include="..\CyberApp.Data\CyberApp.Data.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="SQLite001.db3" />
+      <EmbeddedResource Include="SQLite001.db3">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
+    </ItemGroup>
+
 </Project>

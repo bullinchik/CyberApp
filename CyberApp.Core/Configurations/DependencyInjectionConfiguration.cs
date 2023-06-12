@@ -1,5 +1,6 @@
 using CyberApp.Services.Contracts;
 using CyberApp.Services.Implementations;
+using CyberApp.View_Model;
 
 namespace CyberApp.Configurations;
 
@@ -14,5 +15,6 @@ public static class DependencyInjectionConfiguration
     {
         services.AddSingleton<IQuestionsService, QuestionsService>();
         services.AddSingleton<IClassService, ClassService>();
+        services.AddSingleton<ClassSelectionViewModel>();
     }
 }
