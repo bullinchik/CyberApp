@@ -9,7 +9,7 @@
                   x:Name="titleViewGrid">
                 <Label Text="Персонажи" 
                        Grid.Column="0" 
-                       FontSize="20"
+                       FontSize="18"
                        FontAttributes="Bold"
                        TextColor="White"
                        HorizontalOptions="Start"

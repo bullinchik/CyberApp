@@ -12,10 +12,4 @@ public partial class CreateCharacter : ContentPage
 
         _serviceProvider = serviceProvider;
     }
-
-
-    private void Button_OnClicked(object sender, EventArgs e)
-    {
-        Navigation.PushAsync(new ClassSelection(_serviceProvider.GetRequiredService<ClassSelectionViewModel>()));
-    }
 }

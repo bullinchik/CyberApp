@@ -3,6 +3,7 @@
 <TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:CyberApp.View_Model"
+             xmlns:constans="clr-namespace:CyberApp.Data.Model.Constants;assembly=CyberApp.Data"
              x:Class="CyberApp.View.ClassSelection">
     <NavigationPage.TitleView>
         <Label Text="Выбор класса" 
@@ -12,13 +13,43 @@
     
     <TabbedPage.ItemTemplate>
         <DataTemplate>
-            <StackLayout>
-                <Image Source="{Binding ImageSource}">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding SelectClass}"/> 
-                    </Image.GestureRecognizers>
-                </Image>
-            </StackLayout>
+            <ContentPage Title="{Binding Name}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Border BackgroundColor="Red" Padding="2" Margin="10">
+                        <StackLayout BackgroundColor="White">
+                            <Image x:Name="ImageView" Source="{Binding Image}"
+                                   WidthRequest="195"
+                                   HeightRequest="390"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SelectClass}" />
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <FlexLayout x:Name="DescriptionView" IsVisible="False">
+                                <FlexLayout Direction="Row" AlignContent="SpaceBetween">
+                                    <Label Text="{Binding Name}" HorizontalTextAlignment="Start" />
+                                    <Button Text="{x:Static constans:IconFont.CANCEL_BASELINE}"
+                                            Command="{Binding CancelClass}" />
+                                </FlexLayout>
+                                <ScrollView IsVisible="False" x:Name="Description">
+                                    <Label Text="{x:Binding Description}">
+                                    </Label>
+                                </ScrollView>
+                                <FlexLayout AlignContent="SpaceAround">
+                                    <Button Command="{Binding CancelClass}" />
+                                    <Button Command="{Binding ConfirmClass}" />
+                                </FlexLayout>
+                            </FlexLayout>
+                        </StackLayout>
+                    </Border>
+                </Grid>
+            </ContentPage>
         </DataTemplate>
     </TabbedPage.ItemTemplate>
 </TabbedPage>

@@ -1,7 +1,6 @@
 ﻿using System.Reflection;
 using CyberApp.Data.Model.Models;
-using CyberApp.Data.Model;
-using CyberApp.View_Model;
+
 
 namespace CyberApp.View;
 public partial class MainPage : ContentPage
