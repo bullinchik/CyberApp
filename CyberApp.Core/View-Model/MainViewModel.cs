@@ -42,7 +42,7 @@ public class MainViewModel : INotifyPropertyChanged
         });
         CreateCharacter = new Command(() =>
         {
-            Application.Current.MainPage.Navigation.PushAsync(new CreateCharacter(serviceProvider));
+            Application.Current.MainPage.Navigation.PushAsync(new SelectCharacterCreaterView(serviceProvider));
         });
     }
 

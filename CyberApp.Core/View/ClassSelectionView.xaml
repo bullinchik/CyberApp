@@ -4,17 +4,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:CyberApp.View_Model"
              xmlns:constans="clr-namespace:CyberApp.Data.Model.Constants;assembly=CyberApp.Data"
-             x:Class="CyberApp.View.ClassSelection">
+             x:Class="CyberApp.View.ClassSelectionView">
     <NavigationPage.TitleView>
         <Label Text="Выбор класса" 
                TextColor="White"
                FontSize="18"
+               FontFamily="Bold"
                HorizontalTextAlignment="Center"
                VerticalTextAlignment="Center"/>
     </NavigationPage.TitleView>
     
     <TabbedPage.ItemTemplate>
-        <DataTemplate>
+        <DataTemplate x:Name="DataTemplate">
             <ContentPage Title="{Binding Name}">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -33,21 +34,30 @@
                                     <TapGestureRecognizer Command="{Binding SelectClass}" />
                                 </Image.GestureRecognizers>
                             </Image>
-                            <FlexLayout x:Name="DescriptionView" IsVisible="False">
+                            <Grid x:Name="DescriptionView" IsVisible="False" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50"/>
+                                    <RowDefinition Height="6*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
                                 <FlexLayout Direction="Row" AlignContent="SpaceBetween">
-                                    <Label Text="{Binding Name}" HorizontalTextAlignment="Start" />
-                                    <Button Text="{x:Static constans:IconFont.CANCEL_BASELINE}"
+                                    <Label Text="{Binding Name}" 
+                                           HorizontalTextAlignment="Start" 
+                                           FontSize="18"
+                                           FontAttributes="Bold"
+                                           VerticalTextAlignment="Center" />
+                                    <Button Text="{x:Static constans:IconFont.STAR}"
                                             Command="{Binding CancelClass}" />
                                 </FlexLayout>
-                                <ScrollView IsVisible="False" x:Name="Description">
+                                <ScrollView Grid.Row="1" x:Name="Description">
                                     <Label Text="{x:Binding Description}">
                                     </Label>
                                 </ScrollView>
-                                <FlexLayout AlignContent="SpaceAround">
-                                    <Button Command="{Binding CancelClass}" />
-                                    <Button Command="{Binding ConfirmClass}" />
+                                <FlexLayout Grid.Row="2" AlignContent="SpaceAround" >
+                                    <Button Command="{Binding CancelClass}" Text="Cancel" FontSize="14"/>
+                                    <Button Command="{Binding ConfirmClass}" Text="Confirm" FontSize="14"/>
                                 </FlexLayout>
-                            </FlexLayout>
+                            </Grid>
                         </StackLayout>
                     </Border>
                 </Grid>

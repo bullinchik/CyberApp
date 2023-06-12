@@ -3,10 +3,10 @@ using CyberApp.View_Model;
 
 namespace CyberApp.View;
 
-public partial class CreateCharacter : ContentPage
+public partial class SelectCharacterCreaterView : ContentPage
 {
     private readonly IServiceProvider _serviceProvider;
-    public CreateCharacter(IServiceProvider serviceProvider)
+    public SelectCharacterCreaterView(IServiceProvider serviceProvider)
     {
         InitializeComponent();
 
