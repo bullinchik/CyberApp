@@ -6,7 +6,7 @@
              x:Class="CyberApp.View.MainPage">
     <NavigationPage.TitleView>
             <Grid ColumnDefinitions="9* , 1*"
-                  x:Name="titleViewGrid">
+                  Margin="0,0,8,0">
                 <Label Text="Персонажи" 
                        Grid.Column="0" 
                        FontSize="18"

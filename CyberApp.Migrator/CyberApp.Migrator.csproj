@@ -16,6 +16,7 @@
         <PrivateAssets>all</PrivateAssets>
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
+      <PackageReference Include="Syncfusion.Maui.Core" Version="21.2.10" />
     </ItemGroup>
 
 </Project>

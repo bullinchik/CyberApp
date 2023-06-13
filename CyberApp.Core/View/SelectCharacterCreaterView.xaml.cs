@@ -3,15 +3,16 @@ using CyberApp.View_Model;
 
 namespace CyberApp.View;
 
-public partial class CreateCharacter : ContentPage
+public partial class SelectCharacterCreaterView : ContentPage
 {
-    public CreateCharacter()
+    private IServiceProvider _serviceProvider;
+    public SelectCharacterCreaterView(IServiceProvider serviceProvider)
     {
         InitializeComponent();
     }
 
     private void Button_OnClicked(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new ClassSelection(_serviceProvider.GetRequiredService<ClassSelectionViewModel>()));
+        Navigation.PushAsync(new ClassSelectionView(_serviceProvider.GetRequiredService<ClassSelectionViewModel>()));
     }
 }
