@@ -1,56 +1,70 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Windows.Input;
-using Android.Content;
-using Android.OS;
-using Android.Util;
-using Android.Widget;
+﻿using System.Windows.Input;
+using CyberApp.Data.Model.Entity;
 using CyberApp.View_Model;
-using Microsoft.Maui.Controls.Compatibility.Platform.Android;
-using Microsoft.Maui.Layouts;
 
 namespace CyberApp.View;
 
 public partial class ClassSelectionView : TabbedPage
 {
-    private Page previousPage;
+    private Page _previousPage;
+    private CharacterClass _currentClass;
     public ClassSelectionView(ClassSelectionViewModel classSelectionViewModel)
     {
         InitializeComponent();
         
         BindingContext = classSelectionViewModel;
         ItemsSource = classSelectionViewModel.ClassCollection;
-        
-        foreach (var page in Children)
-        {
-            Image image = (Image)page.FindByName("ImageView");
 
-            TapGestureRecognizer tapGestureRecognizer = new TapGestureRecognizer();
-            tapGestureRecognizer.Tapped += delegate(object sender, TappedEventArgs args) { OnImagePress(); };
-            image.GestureRecognizers.Add(tapGestureRecognizer);
-        }
+        _currentClass = SelectedItem as CharacterClass;
+        
+        SetCommandsForAllPages();
         
         this.CurrentPageChanged += (object IntentSender, EventArgs e) =>
         {
-            Image? classImage = (Image)previousPage.FindByName("ImageView");
-            FlexLayout description = (FlexLayout)previousPage.FindByName("DescriptionView");
-            if (classImage is not null && description is not null)
-            {
-                classImage.IsVisible = true;
-                description.IsVisible = false;
-            }
+            OnImagePress( _previousPage, false);
+            _currentClass = SelectedItem as CharacterClass;
         };
     }
 
-    private void OnImagePress()
+    private void SetCommandsForAllPages()
     {
-        Image classImage = CurrentPage.FindByName("ImageView") as Image;
-        Grid Grid = CurrentPage.FindByName("DescriptionView") as Grid;
-        DisplayAlert("Click", $"Click class Image {classImage is null} and Description {Grid is null}", "ok");
-        classImage.IsVisible = false;
-        Grid.IsVisible = true;
-        previousPage = CurrentPage;
+        ICommand cancelClass = new Command(CancelCurrentClass);
+        ICommand confirmClass = new Command(ConfirmClass);
+        
+        foreach (var page in Children)
+        {
+            Image image = page.FindByName("ImageView") as Image;
+            Button cancelButton = page.FindByName("CancelButton") as Button;
+            Button crossButton = page.FindByName("CrossButton") as Button;
+            Button confirmButton = page.FindByName("ConfirmButton") as Button;
+
+            crossButton.Command = cancelClass;
+            cancelButton.Command = cancelClass;
+            
+            confirmButton.Command = confirmClass;
+            
+            TapGestureRecognizer tapGestureRecognizer = new TapGestureRecognizer();
+            tapGestureRecognizer.Tapped += delegate(object sender, TappedEventArgs args) { OnImagePress(CurrentPage, true); };
+            image.GestureRecognizers.Add(tapGestureRecognizer);
+        }
+    }
+
+    private void OnImagePress(Page page, bool setIsImageVisible)
+    {
+        Image classImage = page.FindByName("ImageView") as Image;
+        Grid grid = page.FindByName("DescriptionView") as Grid;
+        classImage.IsVisible = !setIsImageVisible;
+        grid.IsVisible = setIsImageVisible;
+        _previousPage = CurrentPage;
+    }
+
+    private void CancelCurrentClass()
+    {
+        OnImagePress(CurrentPage, false);
+    }
+
+    private void ConfirmClass()
+    {
+        Navigation.PushAsync(new CreateCharacterView(_currentClass));
     }
 }

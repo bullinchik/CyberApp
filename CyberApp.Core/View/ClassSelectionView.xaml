@@ -14,7 +14,7 @@
                VerticalTextAlignment="Center"/>
     </NavigationPage.TitleView>
     
-    <TabbedPage.ItemTemplate>
+    <TabbedPage.ItemTemplate >
         <DataTemplate x:Name="DataTemplate">
             <ContentPage Title="{Binding Name}">
                 <Grid>
@@ -34,29 +34,56 @@
                                     <TapGestureRecognizer Command="{Binding SelectClass}" />
                                 </Image.GestureRecognizers>
                             </Image>
-                            <Grid x:Name="DescriptionView" IsVisible="False" >
+                            <Grid x:Name="DescriptionView" IsVisible="False" Padding="10">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="50"/>
-                                    <RowDefinition Height="6*"/>
-                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="50" />
+                                    <RowDefinition Height="6*" />
+                                    <RowDefinition Height="*" />
                                 </Grid.RowDefinitions>
-                                <FlexLayout Direction="Row" AlignContent="SpaceBetween">
-                                    <Label Text="{Binding Name}" 
-                                           HorizontalTextAlignment="Start" 
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Row="0" Grid.Column="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="2*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Grid.Column="0" Text="{Binding Name}"
+                                           HorizontalTextAlignment="Start"
                                            FontSize="18"
                                            FontAttributes="Bold"
                                            VerticalTextAlignment="Center" />
-                                    <Button Text="{x:Static constans:IconFont.STAR}"
+                                    <Button Grid.Column="2" FontFamily="MaterialIcons"
+                                            x:Name="CrossButton"
+                                            TextColor="#C93C29"
+                                            FontSize="20"
+                                            BackgroundColor="White"
+                                            Text="{x:Static constans:IconFont.STAR}"
                                             Command="{Binding CancelClass}" />
-                                </FlexLayout>
-                                <ScrollView Grid.Row="1" x:Name="Description">
+                                </Grid>
+                                <ScrollView Grid.Row="1" HeightRequest="270" x:Name="Description">
                                     <Label Text="{x:Binding Description}">
                                     </Label>
                                 </ScrollView>
-                                <FlexLayout Grid.Row="2" AlignContent="SpaceAround" >
-                                    <Button Command="{Binding CancelClass}" Text="Cancel" FontSize="14"/>
-                                    <Button Command="{Binding ConfirmClass}" Text="Confirm" FontSize="14"/>
-                                </FlexLayout>
+                                <Grid Grid.Row="2" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Grid.Column="1" x:Name="CancelButton" Command="{Binding CancelClass}" Text="Cancel" FontSize="14" />
+                                    <Button Grid.Column="3" x:Name="ConfirmButton" Command="{Binding ConfirmClass}" Text="Confirm" FontSize="14" />
+                                </Grid>
                             </Grid>
                         </StackLayout>
                     </Border>

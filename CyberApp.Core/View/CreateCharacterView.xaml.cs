@@ -1,15 +1,14 @@
 ﻿
+using CyberApp.Data.Model.Entity;
 using CyberApp.View_Model;
 
 namespace CyberApp.View;
 
-public partial class SelectCharacterCreaterView : ContentPage
+public partial class CreateCharacterView : TabbedPage
 {
-    private readonly IServiceProvider _serviceProvider;
-    public SelectCharacterCreaterView(IServiceProvider serviceProvider)
+    public CreateCharacterView( CharacterClass characterClass)
     {
         InitializeComponent();
 
-        _serviceProvider = serviceProvider;
     }
 }

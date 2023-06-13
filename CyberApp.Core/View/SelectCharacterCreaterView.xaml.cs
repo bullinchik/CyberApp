@@ -5,7 +5,8 @@ namespace CyberApp.View;
 
 public partial class SelectCharacterCreaterView : ContentPage
 {
-    public SelectCharacterCreaterView()
+    private IServiceProvider _serviceProvider;
+    public SelectCharacterCreaterView(IServiceProvider serviceProvider)
     {
         InitializeComponent();
     }
