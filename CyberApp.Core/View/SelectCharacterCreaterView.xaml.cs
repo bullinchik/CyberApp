@@ -9,10 +9,11 @@ public partial class SelectCharacterCreaterView : ContentPage
     public SelectCharacterCreaterView(IServiceProvider serviceProvider)
     {
         InitializeComponent();
+        _serviceProvider = serviceProvider;
     }
 
     private void Button_OnClicked(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new ClassSelectionView(_serviceProvider.GetRequiredService<ClassSelectionViewModel>()));
+        Navigation.PushAsync(new ClassSelectionView(_serviceProvider));
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Windows.Input;
 using CyberApp.Data.Model.Entity;
+using CyberApp.Services.Implementations;
 using CyberApp.View_Model;
 
 namespace CyberApp.View;
@@ -8,11 +9,12 @@ public partial class ClassSelectionView : TabbedPage
 {
     private Page _previousPage;
     private CharacterClass _currentClass;
-    public ClassSelectionView(ClassSelectionViewModel classSelectionViewModel)
+    public ClassSelectionView(IServiceProvider serviceProvider)
     {
         InitializeComponent();
-        
+        ClassSelectionViewModel classSelectionViewModel = new ClassSelectionViewModel(serviceProvider.GetService<ClassService>()); 
         BindingContext = classSelectionViewModel;
+        
         ItemsSource = classSelectionViewModel.ClassCollection;
 
         _currentClass = SelectedItem as CharacterClass;

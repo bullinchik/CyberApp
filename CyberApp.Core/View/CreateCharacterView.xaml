@@ -12,9 +12,7 @@
                HorizontalOptions="Start"
                VerticalTextAlignment="Center"/>
     </NavigationPage.TitleView>
-    <ContentPage.Content>
-        <DataTemplate>
-            
-        </DataTemplate>
-    </ContentPage.Content>
+    <ContentPage>
+
+    </ContentPage>
 </TabbedPage>
