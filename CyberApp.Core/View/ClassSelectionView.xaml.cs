@@ -9,10 +9,13 @@ public partial class ClassSelectionView : TabbedPage
 {
     private Page _previousPage;
     private CharacterClass _currentClass;
+    private IServiceProvider _serviceProvider;
     public ClassSelectionView(IServiceProvider serviceProvider)
     {
         InitializeComponent();
-        ClassSelectionViewModel classSelectionViewModel = new ClassSelectionViewModel(serviceProvider.GetService<ClassService>()); 
+        _serviceProvider = serviceProvider;
+        
+        ClassSelectionViewModel classSelectionViewModel = new ClassSelectionViewModel(_serviceProvider); 
         BindingContext = classSelectionViewModel;
         
         ItemsSource = classSelectionViewModel.ClassCollection;
